@@ -484,38 +484,35 @@ async function handleMessage(update, env) {
   if (cmd === "/start" || cmd === "/help") {
     return reply(`📋 *Production Log Bot*
 
-━━━ *Logging* ━━━
-/add 150                           — Log 150 pcs (uses your active product)
-/add 150 --product=IC-555          — Log with a different product
-/add 150 --date=2026-05-20         — Log to a past date
-/add 150 --shift=Night             — Override shift (auto: Morning/Evening/Night)
-/add 150 rework batch 3            — Add a note at the end
+━━ *Logging* ━━
+/add 150 — Log 150 pcs (uses active product)
+/add 150 --product=X — Log with a different product
+/add 150 --date=2026-05-20 — Log to past date
+/add 150 --shift=Night — Override shift
+/add 150 rework — Add a note
 
-━━━ *Products* ━━━
-/product                           — Show your active product
-/product PCB-A                     — Switch to a product (remembered for future)
-/products                          — List all products you've used
+━━ *Products* ━━
+/product — Show active product
+/product X — Switch product (remembered)
+/products — List all products
 
-━━━ *Reports* ━━━
-/today                             — Today's entries with per-product breakdown
-/yesterday                         — Yesterday's entries
-/date 2026-05-20                   — Entries for a specific date
-/week                              — Daily totals for this week
-/month                             — Daily totals for this month
-/stats                             — Quick: today + week + month + overall
+━━ *Reports* ━━
+/today — Today's entries & breakdown
+/yesterday /date 2026-05-20 — Past days
+/week /month — Period summaries
+/stats — Today + week + month + overall
 
-━━━ *Utilities* ━━━
-/total                             — Lifetime grand total
-/undo                              — Remove the last entry from today
-/export                            — Download everything as CSV
-/repair                            — Recalculate totals if something looks off
-/help                              — Show this message
+━━ *Utilities* ━━
+/total — Lifetime total
+/undo — Remove last entry from today
+/export — Download CSV
+/repair — Recalculate totals
+/help — This message
 
-━━━ *Examples* ━━━
-Just log:        /add 150
-With product:    /add 200 --product=Connector
-Backdate:        /add 85 --date=2026-05-18 --shift=Night
-Switch product:  /product IC-555`);
+━━ *Examples* ━━
+/add 150
+/add 200 --product=Connector --shift=Night
+/product IC-555`);
   }
 
   return reply("❓ Unknown command. Send /help");
